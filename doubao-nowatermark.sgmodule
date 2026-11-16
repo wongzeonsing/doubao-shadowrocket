@@ -1,0 +1,12 @@
+#!name=豆包去水印（实验）
+#!desc=把豆包接口里的 image_ori（带水印）替换为 image_ori_raw（无水印原图）。仅网页版生效，App 内无效。⚠️ 未真机验证，异常请关闭本模块。
+#!author=Minis
+#!category=应用增强
+#!system=ios
+#!homepage=https://github.com/Qalxry/doubao-no-watermark
+
+[Script]
+doubao-nomark = type=http-response,pattern=^https:\/\/www\.doubao\.com\/(im\/chain\/|samantha\/|creativity\/resource\/),requires-body=1,max-size=10485760,engine=webview,script-path=https://raw.githubusercontent.com/wongzeonsing/doubao-shadowrocket/main/doubao-nomark.js,timeout=30
+
+[MITM]
+hostname = %APPEND% www.doubao.com
