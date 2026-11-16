@@ -15,7 +15,8 @@
  */
 
 var RAW_KEYS = ['image_ori_raw', 'image_thumb_ori', 'image_raw'];
-var TARGET_KEYS = ['image_ori', 'image_thumb', 'downloadImage', 'download_img'];
+// 只改「下载」字段。刻意不动 image_thumb / image_preview —— 把缩略图指向原图会让页面加载一堆大图，反而变慢。
+var TARGET_KEYS = ['image_ori', 'downloadImage', 'download_img', 'image_dld'];
 
 function pickUrl(v) {
   if (!v) return null;
